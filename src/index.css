@@ -31,114 +31,91 @@ body{
 
 /* Vission and Mission */
 
-.mv-wrapper {
+.mission-vision-container {
+  background: linear-gradient(180deg, #f8fdf9 0%, #e9f7ee 100%);
   min-height: 100vh;
-  background: linear-gradient(135deg, #e6f4ec 0%, #f9fdf9 100%);
+  padding: 60px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding: 70px 20px;
-  font-family: "Poppins", "Segoe UI", sans-serif;
-  animation: fadePage 1s ease-in-out;
+  font-family: "Segoe UI", sans-serif;
+  animation: fadePage 0.8s ease-in-out;
 }
 
-.mv-header {
+
+.header-box {
   text-align: center;
-  margin-bottom: 60px;
-  background: linear-gradient(90deg, #217346, #3da76b);
-  padding: 40px 60px;
-  border-radius: 25px;
-  color: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  transform: translateY(0);
-  transition: transform 0.4s ease;
+  margin-bottom: 50px;
 }
 
-.mv-header:hover {
-  transform: translateY(-5px);
-}
-
-.mv-header h1 {
-  font-size: 42px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+.title {
+  color: #217346;
+  font-size: 40px;
+  font-weight: bold;
   margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px;
 }
 
-.mv-header p {
+.subtitle {
+  color: #3e7e56;
   font-size: 18px;
-  opacity: 0.9;
+  margin-top: 5px;
   font-style: italic;
 }
 
-.mv-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 40px;
-  width: 90%;
-  max-width: 1100px;
-}
-
-.mv-card {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
+.card {
+  background-color: white;
+  width: 85%;
+  max-width: 900px;
+  padding: 45px;
+  margin-bottom: 35px;
   border-radius: 25px;
-  padding: 40px 35px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(33, 115, 70, 0.2);
+  border: 2px solid #cde7d5;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease;
   text-align: justify;
-  position: relative;
-  overflow: hidden;
 }
 
-.mv-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -50%;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    rgba(33, 115, 70, 0.05),
-    rgba(33, 115, 70, 0.15),
-    rgba(33, 115, 70, 0.05)
-  );
-  transform: skewX(-25deg);
-  opacity: 0;
-  transition: opacity 0.4s ease;
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #217346;
 }
 
-.mv-card:hover::before {
-  opacity: 1;
-}
 
-.mv-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
-}
-
-.mv-card h2 {
-  color: #217346;
+.card h2 {
+  color: #145b32;
   font-size: 26px;
-  font-weight: 700;
-  border-left: 5px solid #217346;
+  margin-bottom: 15px;
+  border-left: 6px solid #217346;
   padding-left: 15px;
-  margin-bottom: 18px;
   text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
-.mv-card p {
-  color: #2d2d2d;
+.card p {
+  color: #333;
   font-size: 18px;
-  line-height: 1.8;
-  transition: color 0.3s ease;
+  line-height: 1.9;
 }
 
-/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
+}
+
+.fade-in.delay {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes fadePage {
   from {
     opacity: 0;
@@ -147,3 +124,5 @@ body{
     opacity: 1;
   }
 }
+
+
